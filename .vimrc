@@ -48,7 +48,7 @@ Plugin 'hdima/python-syntax'
 Plugin 'tkztmk/vim-vala'
 
 Plugin 'vim-scripts/xptemplate'
-"Plugin 'vim-scripts/snipMate'
+Plugin 'vim-scripts/snipMate'
 
 Plugin 'CmdlineComplete'
 "Plugin 'cmdline-completion'
@@ -238,6 +238,8 @@ nmap <Leader>F :NERDTreeFind<CR>
 let g:snip_author   = "houzy"
 let g:snip_mail     = "h-zy2008@163.com"
 let g:snip_company  = ""
+" xptemplate
+let g:xptemplate_vars = "author=houzy&email=h-zy2008@163.com"
 
 " man.vim - view man page in VIM
 source $VIMRUNTIME/ftplugin/man.vim
