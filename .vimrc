@@ -44,6 +44,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'myusuf3/numbers.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-vividchalk'
+Plugin 'hdima/python-syntax'
 
 Plugin 'vim-scripts/xptemplate'
 "Plugin 'vim-scripts/snipMate'
@@ -249,9 +250,14 @@ nmap <leader>sd :cs find d <C-R>=expand("<cword>")<cr><cr>
 "}}}
 
 " addition by houzy: {{{
+" numbers
 nnoremap <F3> :NumbersToggle<CR>
-" python
+
+" python-syntax
 let OPTION_NAME = 1
+let python_highlight_all = 1
+
+" tags file
 set tags+=~/ctagsFile/systags
 
 " omnicppcomplete
