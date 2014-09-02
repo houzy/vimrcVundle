@@ -45,6 +45,7 @@ Plugin 'myusuf3/numbers.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-vividchalk'
 Plugin 'hdima/python-syntax'
+Plugin 'tkztmk/vim-vala'
 
 Plugin 'vim-scripts/xptemplate'
 "Plugin 'vim-scripts/snipMate'
@@ -268,8 +269,6 @@ let OmniCpp_ShowPrototypeInAbbr = 1
 vmap <C-C> "+y
 
 " vala support
-autocmd BufRead *.vala,*.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
-au BufRead,BufNewFile *.vala,*.vapi setfiletype vala
 " Disable valadoc syntax highlight
 "let vala_ignore_valadoc = 1
 
