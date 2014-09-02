@@ -53,6 +53,9 @@ Plugin 'vim-scripts/xptemplate'
 Plugin 'CmdlineComplete'
 "Plugin 'cmdline-completion'
 
+Plugin 'file://~/.vim/bundle/color-themes'
+Plugin 'file://~/.vim/bundle/jeffy-plugins'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -124,6 +127,7 @@ set fileformat=unix
 
 set background=dark
 "colorscheme vividchalk
+"colorscheme golden
 
 " gui settings
 if has("gui_running")
