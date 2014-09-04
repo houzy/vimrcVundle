@@ -46,6 +46,9 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-vividchalk'
 Plugin 'hdima/python-syntax'
 Plugin 'tkztmk/vim-vala'
+Plugin 'sukima/xmledit'
+Plugin 'vim-scripts/matchit.zip'
+Plugin 'scrooloose/syntastic'
 
 Plugin 'vim-scripts/xptemplate'
 Plugin 'vim-scripts/snipMate'
@@ -280,6 +283,27 @@ vmap <C-C> "+y
 
 " Enable comment strings
 let vala_comment_strings = 1
+
+" syntastic
+let g:syntastic_check_on_open = 1
+let g:syntastic_error_symbol = "✗"
+let g:syntastic_warning_symbol = "⚠"
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_loc_list_height = 5
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_enable_balloons = 1
+let g:syntastic_mode_map = { 'passive_filetypes': ['scss', 'slim'] }
+let g:syntastic_python_checkers = ['pyflakes', 'pylint']
+let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
+"set statusline+=%{SyntasticStatuslineFlag()}
+"let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+"let g:syntastic_enable_highlighting = 0
+"let g:syntastic_cpp_include_dirs = ['/usr/include/']
+"let g:syntastic_cpp_remove_include_errors = 1
+"let g:syntastic_cpp_check_header = 1
+"let g:syntastic_cpp_compiler = 'clang++'
+"let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libstdc++'
 
 " Highlight space errors
 let vala_space_errors = 1
