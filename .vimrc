@@ -56,6 +56,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'vim-scripts/xptemplate'
 Plugin 'vim-scripts/snipMate'
 
+Plugin 'Yggdroot/indentLine'
+
 Plugin 'CmdlineComplete'
 "Plugin 'cmdline-completion'
 
