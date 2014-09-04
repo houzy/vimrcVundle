@@ -54,6 +54,7 @@ Plugin 'vim-scripts/xptemplate'
 Plugin 'vim-scripts/snipMate'
 
 Plugin 'Yggdroot/indentLine'
+Plugin 'luochen1990/rainbow'
 
 Plugin 'CmdlineComplete'
 "Plugin 'cmdline-completion'
@@ -306,6 +307,9 @@ let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
 "let g:syntastic_cpp_check_header = 1
 "let g:syntastic_cpp_compiler = 'clang++'
 "let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libstdc++'
+
+" rainbow
+let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 
 " Highlight space errors
 let vala_space_errors = 1
