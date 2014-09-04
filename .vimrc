@@ -33,7 +33,8 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'vim-scripts/L9'
 Plugin 'vim-scripts/mru.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'vim-scripts/AutoComplPop'
+"Plugin 'vim-scripts/AutoComplPop' " conflicts with YouCompleteMe
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/OmniCppComplete'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'vim-scripts/VisIncr'
@@ -48,7 +49,9 @@ Plugin 'hdima/python-syntax'
 Plugin 'tkztmk/vim-vala'
 Plugin 'sukima/xmledit'
 Plugin 'vim-scripts/matchit.zip'
+" google search Why did YCM stop using Syntastic for diagnostics display?
 Plugin 'scrooloose/syntastic'
+
 
 Plugin 'vim-scripts/xptemplate'
 Plugin 'vim-scripts/snipMate'
@@ -283,6 +286,29 @@ vmap <C-C> "+y
 
 " Enable comment strings
 let vala_comment_strings = 1
+
+" YouCompleteMe
+"let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+"let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_confirm_extra_conf = 0
+" 关闭YouCompleteMe得高亮错误，用syntastic的
+let g:ycm_show_diagnostics_ui = 0
+"let g:ycm_error_symbol = "✗"
+"let g:ycm_warning_symbol = "⚠"
+let g:ycm_always_populate_location_list = 1
+let g:ycm_add_preview_to_completeopt = 1
+let g:ycm_key_detailed_diagnostics = '<leader>d'
+nnoremap <leader>jd :YcmCompleter GoTo<CR>  " ctrl+o jumpback ctrl+i jumpforward
+nnoremap <leader>jf :YcmForceCompileAndDiagnostics<CR>
+" 禁止缓存匹配项,每次都重新生成匹配项
+let g:ycm_cache_omnifunc = 0
+"在注释输入中也能补全
+let g:ycm_complete_in_comments = 1
+"在字符串输入中也能补全
+let g:ycm_complete_in_strings = 1
+"注释和字符串中的文字也会被收入补全
+let g:ycm_collect_identifiers_from_comments_and_strings = 0
 
 " syntastic
 let g:syntastic_check_on_open = 1
