@@ -27,6 +27,10 @@ if exists('loaded_project')
 endif
 let loaded_project=1
 
+if !exists('g:jeffy_plugins_enable_colors')
+    let g:jeffy_plugins_enable_colors=1
+endif
+
 if v:version < 700
     finish
 endif
@@ -171,8 +175,11 @@ function! s:ProjectUpdate()
     endif
 
     call s:HLUDSync(proj_data . '/tags', proj_data . '/udtags')
-    " houzy
-    " call s:HLUDColor()
+
+    if g:jeffy_plugins_enable_colors
+        call s:HLUDColor()
+    endif
+
     echo "update project done."
     return 1
 endfunction
@@ -202,8 +209,10 @@ function! s:ProjectLoad()
 
     " color user defined.
     call s:HLUDLoad(proj_data . '/udtags')
-    " houzy
-    " call s:HLUDColor()
+
+    if g:jeffy_plugins_enable_colors
+        call s:HLUDColor()
+    endif
 
     echon "load project done."
     return 1
@@ -225,22 +234,24 @@ endfunction
 
 " }}}
 
-command! -nargs=0 -complete=file ProjectCreate call s:ProjectCreate()
-command! -nargs=0 -complete=file ProjectUpdate call s:ProjectUpdate()
-command! -nargs=0 -complete=file ProjectLoad call s:ProjectLoad()
-command! -nargs=0 -complete=file ProjectQuit call s:ProjectQuit()
+" Conflicts with eclim.vim, add Jeffy prefix
+command! -nargs=0 -complete=file JeffyProjectCreate call s:ProjectCreate()
+command! -nargs=0 -complete=file JeffyProjectUpdate call s:ProjectUpdate()
+command! -nargs=0 -complete=file JeffyProjectLoad call s:ProjectLoad()
+command! -nargs=0 -complete=file JeffyProjectQuit call s:ProjectQuit()
 
 aug Project
     au VimEnter * call s:ProjectLoad()
     au VimLeavePre * call s:ProjectQuit()
-    " houzy
-    " au BufEnter,FileType c,cpp call s:HLUDColor()
+    if g:jeffy_plugins_enable_colors
+        au BufEnter,FileType c,cpp call s:HLUDColor()
+    endif
 aug END
 
-nnoremap <leader>jc :ProjectCreate<cr>
-nnoremap <leader>ju :ProjectUpdate<cr>
-nnoremap <leader>jl :ProjectLoad<cr>
-nnoremap <leader>jq :ProjectQuit<cr>
+nnoremap <leader>jc :JeffyProjectCreate<cr>
+nnoremap <leader>ju :JeffyProjectUpdate<cr>
+" nnoremap <leader>jl :JeffyProjectLoad<cr>
+nnoremap <leader>jq :JeffyProjectQuit<cr>
 
 " restore 'cpo'
 let &cpo = s:cpo_save

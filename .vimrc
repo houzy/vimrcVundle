@@ -62,8 +62,9 @@ Plugin 'luochen1990/rainbow'
 Plugin 'CmdlineComplete'
 "Plugin 'cmdline-completion'
 
+Plugin 'houzy/jeffy-plugins'
+
 Plugin 'file://~/.vim/bundle/color-themes'
-Plugin 'file://~/.vim/bundle/jeffy-plugins'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
